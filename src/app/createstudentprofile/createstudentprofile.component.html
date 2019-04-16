@@ -1,0 +1,126 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<h1 class="name">
+  WELCOME {{userEmail}}
+</h1>
+<!-- <h3>
+  {{studentCurrentInfo.latestDegree}}
+  {{studentCurrentInfo.skillset}}
+</h3> -->
+
+<div class="container">
+  <h1>
+    Select the companies you want to apply for
+  </h1>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor='let company of (Companies|async)' (click)="SelectCompany(company)">
+      {{company.name}} ({{company.title}})
+      <br>
+      {{company.job}} ({{company.amount}})
+      <br>
+      {{company.qualification_required}}
+    </li>
+  </ul>
+</div>
+
+<h1 class="name" id="head">EDIT PROFILE</h1>
+<form fxLayout='column' fxLayoutAlign="center center" (ngSubmit)="saveProfile(g)" #g="ngForm">
+  <mat-form-field>
+
+
+    <input matInput type="text" name="degree" required ngModel placeholder="enter Degree">
+
+  </mat-form-field>
+  <br>
+
+  <mat-form-field>
+
+    <input matInput type="text" name="grade" required ngModel placeholder="enter GPA">
+  </mat-form-field>
+  <br>
+  <mat-form-field hintLabel="Min 6 characters">
+
+
+    <input matInput type="text" name="skill" required ngModel placeholder="enter skillset">
+  </mat-form-field>
+  <br>
+
+  <button mat-raised-button color="warn" type="submit">Submit</button>
+
+</form>
+<br>
+<br>
+<!-- <form (ngSubmit)="saveProfile(g)" #g="ngForm">
+          
+  <h3>Set Profile</h3>
+  
+  <label>Degree</label>
+  <input type="text" name="degree" id="uname" required ngModel>
+
+  <label>CGPA</label>
+  <input type="text" name="grade" id="uname" required ngModel>
+
+<br>
+
+  <label>SkillSet </label>
+  <input type="email" name="skill" id="email" required ngModel>
+
+<br>
+
+
+  <button type="submit">Apply for {{selectedCompany}}</button>
+
+</form> -->
+
+<div class="container" fxLayout='column' fxLayoutAlign="center center">
+  <h1>
+    Select a Company
+  </h1>
+  <h1>
+    Your CV :
+  </h1>
+  <form (ngSubmit)="Applyforjob(f)" #f="ngForm">
+
+    <h3>Selected Company {{selectedCompany}}</h3>
+
+    <mat-form-field>
+
+
+      <input matInput type="text" name="names" required ngModel placeholder="Your name">
+  
+    </mat-form-field>
+    <br>
+
+    <!-- <label>Name</label>
+    <input type="text" name="names" id="uname" required ngModel> -->
+
+    <mat-form-field>
+
+
+      <input matInput type="text" name="degree" required ngModel placeholder="Degree">
+  
+    </mat-form-field>
+
+    <!-- <label>LatestDegree</label>
+    <input type="text" name="degree" id="uname" required ngModel> -->
+
+    <br>
+
+    <mat-form-field>
+
+
+      <input matInput type="text" name="skill" required ngModel placeholder="Skills">
+  
+    </mat-form-field>
+
+    <!-- <label>SkillSet </label>
+    <input type="email" name="skill" id="email" required ngModel> -->
+
+    <br>
+
+    <p class="full">
+      <button mat-raised-button color="warn" type="submit">Apply for {{selectedCompany}}</button>
+    </p>
+  </form>
+</div>
+<button mat-button color="primary" (click)="Logout()">LOGOUT</button>

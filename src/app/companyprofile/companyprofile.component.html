@@ -1,0 +1,78 @@
+<h1>
+  Hello {{ userEmail}}
+</h1>
+
+  <!-- <li *ngFor="let vacancy of (CompanyState | async).vacancyPosted">
+    {{ vacancy.title }} ({{vacancy.amount}})
+  </li> -->
+  <br>
+  <div class="card">
+  <h1 class="card-body" id="view" (click)="viewStudents()">Click to view the students who have applied for your Company </h1>
+</div>
+  <ul class="list-group">
+  <li class="list-group-item" *ngFor = "let students of StudnentsSelected">{{students.applicants}}</li>
+</ul>
+
+  <!-- <h1>Students you have selected</h1>
+  <li *ngFor="let vacancy of (CompanyState | async).studentsSelected">
+    {{vacancy}}
+  </li> -->
+
+
+
+
+
+
+<div class="container" fxLayout='column' fxLayoutAlign="center center">
+  <h1>
+    Post a new vacancy
+  </h1>
+  
+  <form (ngSubmit)="PostVacancy(f)" #f="ngForm">
+
+    
+
+    <mat-form-field>
+
+
+      <input matInput type="text" name="title" required ngModel placeholder="vacancy for">
+  
+    </mat-form-field>
+    <br>
+
+    
+
+    <mat-form-field>
+
+
+      <input matInput type="text" name="amount" required ngModel placeholder="amount ">
+  
+    </mat-form-field>
+
+
+    <br>
+
+    <mat-form-field>
+
+
+      <input matInput type="text" name="qualification" required ngModel placeholder="Qualification required">
+  
+    </mat-form-field>
+<br>
+    <mat-form-field>
+
+
+      <input matInput type="text" name="date" required ngModel placeholder="due date">
+  
+    </mat-form-field>
+
+
+    <br>
+
+    <p class="full">
+      <button mat-raised-button color="warn" type="submit">Post</button>
+    </p>
+  </form>
+</div>
+
+<button mat-button color="warn" (click)="Logout()">LOGOUT</button>

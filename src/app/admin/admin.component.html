@@ -1,0 +1,17 @@
+<h1>
+  Hello Admin
+</h1>
+<h1>
+  THIS IS THE LIST OF ALL STUDENTS IN YOUR CAMPUS
+</h1>
+<h3>
+  CLICK TO REMOVE ANY ACCOUNT
+</h3>
+<ul class="list-group">
+  <li  class="list-group-item" *ngFor="let student of (StudentsData | async )" (click)="Remove(student.id)">
+    Name: {{student.name}} 
+    GPA: {{student.GPA}}  </li>
+</ul>
+
+
+

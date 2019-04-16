@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>
+    Choose:
+    
+  </h1>
+  <label>Pick your Account Type</label>
+<!-- <mat-radio-group
+  
+  [(ngModel)]="accountType">
+  <mat-radio-button [value]='company'>
+    COMPANY
+  </mat-radio-button>
+  <mat-radio-button [value]='student'>
+    STUDENT
+  </mat-radio-button>
+  
+</mat-radio-group>
+<div>Your favorite season is: {{accountType}}</div> -->
+
+<!-- <label id="example-radio-group-label">Pick your favorite season</label> -->
+<mat-radio-group
+  
+  [(ngModel)]="accountType">
+  <!-- <mat-radio-button  [value]="company">
+    {{season}}
+  </mat-radio-button> -->
+  <mat-radio-button  *ngFor="let account of accounts" [value]="account">
+    {{account}}
+  </mat-radio-button>
+</mat-radio-group>
+<div>Your chosen account is: {{accountType}}</div>
+
+
+  <form (ngSubmit)="submit(f)" #f="ngForm">
+          
+    <h3>{{accountType}} information </h3>
+    
+    <label>Name</label>
+    <input type="text" name="name" id="uname" required ngModel>
+ 
+  <br>
+    <label>Email</label>
+    <input type="text" name="email" id="uname" required ngModel>
+ 
+  <br>
+  
+    <label>Password </label>
+    <input type="email" name="password" id="email" required ngModel>
+  
+  <br>
+ 
+  <p class="full">
+    <button type="submit" mat-button>Create</button>
+  </p>
+</form>
+
