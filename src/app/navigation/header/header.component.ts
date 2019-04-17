@@ -12,7 +12,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class HeaderComponent implements OnInit{
 user:string = null;
 isAuthenticated:boolean;
-  @Output() sidenavToggle = new EventEmitter<void>();
+@Output() sidenavToggle = new EventEmitter<void>();
 
   constructor(private afauth:AngularFireAuth,private auth:AuthService) { 
   }

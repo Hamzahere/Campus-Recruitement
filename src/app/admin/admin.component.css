@@ -1,0 +1,43 @@
+
+
+h1 {
+	font-family: 'Dancing Script', cursive;
+	
+}
+
+h3 {
+	font-family: 'Open Sans', sans-serif;
+    
+   
+    
+}
+
+button {
+	border: none;
+	outline: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	color: #333;
+	background: #fff;
+	margin-bottom: 50px;
+	box-shadow: 0 3px 20px 0 #0000003b;
+}
+button:hover{
+	cursor: pointer;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+    margin-bottom: 30px;
+    
+}
+
+/*mat-grid-list {
+    background-color: aqua;
+}
+
+mat-grid-tile{
+
+    padding: 10px;
+    border: 2px solid white;
+}*/

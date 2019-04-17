@@ -36,7 +36,7 @@ errShow:any = '';
 
   Login(f:NgForm){
 
-    this.AdminLogin(f.value.email,f.value.password);
+    
     let authdata:AuthData = {
       email:f.value.email,
       password : f.value.password
@@ -44,12 +44,9 @@ errShow:any = '';
  console.log(f.value.email);
  console.log(f.value.password);
  this.authservice.login(authdata);
+//  this.AdminLogin(f.value.email,f.value.password);
   }
 
-  AdminLogin(adminemail:string,adminpass:string){
-    if(adminemail == 'admin123@gmail.com' && adminpass == 'reserved'){
-this.router.navigate(['/admin']);
-    }
-  }
+  
 
 }

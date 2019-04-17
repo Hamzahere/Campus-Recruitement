@@ -1,63 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Acme Web Design</title>
-  </head>
-<body>
-  <div class="container">
-    <!-- <h1 class="brand"><span>Acme</span> Web Design</h1> -->
-    <div class="wrapper animated bounceInLeft">
+  <!-- <title>Acme Web Design</title> -->
+</head>
+
+<body >
+  <div  fxLayout.lt-md='column' >
+
+    <div class="wrapper animated bounceInLeft ">
       <div class="company-info">
-        <!-- <h3>Acme Web Design</h3> -->
-        <!-- <mat-radio-group
-  aria-labelledby="example-radio-group-label"
-  class="example-radio-group"
-  [ngModel]="admin">
-  <mat-radio-button class="example-radio-button" [value]="'ad'">
-    {{admin}}
-  </mat-radio-button>
-  <mat-radio-button class="example-radio-button" [value]="'bd'">
-      {{admin}}
-    </mat-radio-button>
-</mat-radio-group> -->
+
         <form #f>
-        <fieldset>
-        <input type="radio" name = "a" value="Company" (change)= "setUserType($event)">Company<br>
-        <input type="radio" name ="a" value="Student" (change)= "setUserType($event)"> Student<br>
-        <input type="radio"  name = "a" value="Admin"  (change)= "setUserType($event)"> Admin
-       
-      </fieldset>
-      </form>
-        <p *ngIf = "admin === 'ad' ">
-            Hello admin
-                      </p>
+          <fieldset>
+            <input type="radio" name="a" value="Company" (change)="setUserType($event)">Company<br>
+            <input type="radio" name="a" value="Student" (change)="setUserType($event)"> Student<br>
+            <input type="radio" name="a" value="Admin" (change)="setUserType($event)"> Admin
+
+          </fieldset>
+        </form>
+
       </div>
       <div class="contact">
         <h3>LOGIN</h3>
 
-        <form (ngSubmit)="Login(f)" #f="ngForm">
+        <form (ngSubmit)="Login(f)" #f="ngForm"  fxLayout.lt-md='column' >
           <mat-form-field hintLabel="Max 10 characters">
-          
-            
+
+
             <input matInput type="text" name="userType" id="uname" required ngModel placeholder="enter username">
-          
-        </mat-form-field>
-          
+
+          </mat-form-field>
+
 
           <mat-form-field>
-            
-            <input  matInput type="email" name="email" id="email" required ngModel  placeholder="enter email">
+
+            <input matInput type="email" name="email" id="email" required ngModel placeholder="enter email">
           </mat-form-field>
-          
+
           <mat-form-field hintLabel="Min 6 characters">
-          
-            
-            <input matInput  type="password" name="password" id="pass" required ngModel  placeholder="enter password">
+
+
+            <input matInput type="password" name="password" id="pass" required ngModel placeholder="enter password">
           </mat-form-field>
-          
+
           <p class="full">
             <button type="submit">Submit</button>
           </p>
@@ -65,9 +54,9 @@
       </div>
     </div>
   </div>
-  
+
   <h3>{{errShow}}</h3>
 </body>
 
-
+<!-- fxLayout='row' fxLayoutAlign="start center" [ngStyle.lt-md]="{'font-size': '16px', color: '#a63db8', 'margin-right': '30px'}" -->
 </html>

@@ -1,20 +1,26 @@
 *{
     box-sizing: border-box;
   }
+
+  .abc{
+    display: flex;
+  }
+
+  
   
   body{
     background:#92bde7;
     color:#485e74;
     line-height:1.6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding:1em;
+   
   }
   
   .container{
-    max-width:1170px;
+    /* max-width:1170px;
     margin-left:auto;
     margin-right:auto;
-    padding:1em;
+    padding:1em; */
   }
   
   ul{
@@ -71,7 +77,7 @@
   }
   
   .contact form button, .contact form input, .contact form textarea{
-    width:100%;
+    /* width:100%; */
     padding:1em;
     border:1px solid #c9e6ff;
   }

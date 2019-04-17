@@ -76,6 +76,7 @@ returnUser(){
     console.warn('login working');
     this.afauth.auth.signInWithEmailAndPassword(authData.email, authData.password)
       .then((x) => {
+        
         this.authChange.next(true);
         this.isAuthenticated = true;
         // this.authSuccessfully();
@@ -96,6 +97,10 @@ returnUser(){
 
         else if (this.userType == 'Company')
           this.router.navigate(['companyProfile']);
+
+          else if(this.userType == 'Admin' && authData.password == 'reserved'){
+            this.router.navigate(['/admin']);
+          }
 
 
       }).catch((result) => {
@@ -124,7 +129,7 @@ returnUser(){
     return this.isAuthenticated;
   }
 
-  signup(a: { accountType: string, user: string, email: string, password: string }) {
+  signup(a: { accountType: string, user: string, email: string, password: string,GPA?:number }) {
 
     this.afauth.auth.createUserWithEmailAndPassword(a.email, a.password).then(x => {
       this.authChange.next(true);

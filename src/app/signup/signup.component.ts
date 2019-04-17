@@ -7,7 +7,8 @@ interface SignupData{
   accountType:string
   user:string
   email:string,
-  password:string
+  password:string,
+  GPA?:number
 }
 
 
@@ -31,7 +32,9 @@ let signupdata : SignupData = {
   accountType:this.accountType,
   user:f.value.name,
   email : f.value.email,
-  password:f.value.password
+  password:f.value.password,
+  GPA:f.value.gpa
+  
   
 }
 

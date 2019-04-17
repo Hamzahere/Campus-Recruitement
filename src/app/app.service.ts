@@ -69,11 +69,21 @@ export class DataService implements OnInit {
     //   );
   }
 
-  addUser(docdata: { accountType: string, user: string, email: string, password: string }) {
+  addUser(docdata: { accountType: string, user: string, email: string, password: string,GPA?:number }) {
+    if(docdata.accountType == 'Students'){
     this.db.collection(docdata.accountType).add({
       name: docdata.user,
-      email: docdata.email
+      email: docdata.email,
+      GPA:docdata.GPA
     })
+  }
+else{
+  this.db.collection(docdata.accountType).add({
+    name: docdata.user,
+    email: docdata.email,
+    
+  })
+}
   }
 
   saveVacancies(vacancies: Vacancy, useremail: string) {

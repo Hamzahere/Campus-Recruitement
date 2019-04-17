@@ -4,20 +4,7 @@
     
   </h1>
   <label>Pick your Account Type</label>
-<!-- <mat-radio-group
-  
-  [(ngModel)]="accountType">
-  <mat-radio-button [value]='company'>
-    COMPANY
-  </mat-radio-button>
-  <mat-radio-button [value]='student'>
-    STUDENT
-  </mat-radio-button>
-  
-</mat-radio-group>
-<div>Your favorite season is: {{accountType}}</div> -->
 
-<!-- <label id="example-radio-group-label">Pick your favorite season</label> -->
 <mat-radio-group
   
   [(ngModel)]="accountType">
@@ -31,26 +18,58 @@
 <div>Your chosen account is: {{accountType}}</div>
 
 
-  <form (ngSubmit)="submit(f)" #f="ngForm">
+  <!-- <form (ngSubmit)="submit(f)" #f="ngForm"> -->
           
     <h3>{{accountType}} information </h3>
     
-    <label>Name</label>
-    <input type="text" name="name" id="uname" required ngModel>
+    <!-- <label>Name</label>
+    <input type="text" name="name" id="uname" required ngModel> -->
  
-  <br>
-    <label>Email</label>
+  <!-- <br> -->
+    <!-- <label>Email</label>
     <input type="text" name="email" id="uname" required ngModel>
  
-  <br>
+  <br> -->
   
-    <label>Password </label>
+    <!-- <label>Password </label>
     <input type="email" name="password" id="email" required ngModel>
   
-  <br>
+  <br> -->
  
-  <p class="full">
+  <!-- <p class="full">
     <button type="submit" mat-button>Create</button>
   </p>
+</form> -->
+
+
+<form fxLayout='column' fxLayoutAlign="center center" (ngSubmit)="submit(f)" #f="ngForm">
+    <mat-form-field>
+
+
+        <input matInput type="text"  name="name" required ngModel placeholder="Name">
+      
+      </mat-form-field>
+<mat-form-field>
+
+
+  <input matInput type="text"  name="email" required ngModel placeholder="Email">
+
+</mat-form-field>
+<br>
+
+<mat-form-field>
+
+  <input matInput type="text" name="password" required ngModel placeholder="password">
+</mat-form-field>
+<br>
+<mat-form-field hintLabel="Min 6 characters">
+
+
+  <input   matInput type="text" name="gpa" ngModel placeholder="enter CGPA only for students">
+</mat-form-field>
+<br>
+
+<button mat-raised-button color="warn" type="submit">Submit</button>
+
 </form>
 

@@ -1,24 +1,31 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-<h1 class="name">
-  WELCOME {{userEmail}}
+<div class="container" fxLayout='column' fxLayoutAlign="start center" fxLayout.lt-md='column' fxLayoutAlign.lt-md="start start">
+<h1 class="name" >
+  WELCOME
+  
+  
 </h1>
+<br>
+{{userEmail}}
 <!-- <h3>
   {{studentCurrentInfo.latestDegree}}
   {{studentCurrentInfo.skillset}}
 </h3> -->
 
-<div class="container">
+
   <h1>
     Select the companies you want to apply for
   </h1>
   <ul class="list-group">
     <li class="list-group-item" *ngFor='let company of (Companies|async)' (click)="SelectCompany(company)">
-      {{company.name}} ({{company.title}})
+     Name : {{company.name}}
+     <br>
+     For :({{company.title}})
       <br>
-      {{company.job}} ({{company.amount}})
+      {{company.job}} Salary : ({{company.amount}})
       <br>
-      {{company.qualification_required}}
+     Qualification required:  {{company.qualification_required}}
     </li>
   </ul>
 </div>
